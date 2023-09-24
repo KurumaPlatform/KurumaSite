@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en" class="dark-mode"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Kuruma</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kuruma, la plataforma de suabstas de vehículos que revolucionará el mercado. Compra coches al mejor precio o vende vehículos de manera eficiente.">
+    <meta name="keywords" content="Kuruma, subastas, coches, vehículos, compra, venta, oferta, ocasión">
+    <meta name="author" content="Kuruma">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="./KurumaLanding_files/boxicons.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="./KurumaLanding_files/theme.min.css">
+
+    <style>
+     
+    #cursor {
+        width: 20px; /* Set the width of the cursor div */
+        height: 20px; /* Set the height of the cursor div */
+        background: radial-gradient(circle, #0011ff, #004a8b); /* Blue gradient background */
+        border-radius: 50%; /* Make it circular */
+        position: absolute; /* Position it absolutely on the page */
+        pointer-events: none; /* Make sure it doesn't interfere with click events */
+        transform: translate(-50%, -50%); /* Center the cursor on the mouse pointer */
+        transition: transform 0.2s ease, width 0.2s ease, height 0.3s ease; /* Add a smooth transition effect */
+        z-index: 10000;
+        display: block;
+    }
+
+    @media (max-width: 768px) { /* You can adjust the max-width to your needs */
+    #cursor {
+        display: none;
+    }
+}
+    body
+    {
+      cursor: none;
+      overflow-x: hidden;
+    }
+    body:hover #cursor {
+    transform: translate(-50%, -50%);
+    }
+
+    a:hover #cursor
+    {
+      width: 100px;
+    }
+
+    ::-webkit-scrollbar
+    {
+      width: 15px;
+    }
+    ::-webkit-scrollbar-thumb
+    {
+      background-color: rgb(17, 0, 255);
+      border-radius: 100px;
+
+    }
+    ::-webkit-scrollbar-thumb:hover
+    {
+      background-color: rgba(17, 0, 255, 0.603);
+    }
+
+    .btn-primary
+    {
+      background-color: rgb(0, 38, 255);
+      border-color: #0011ff;
+    }
+    .btn-primary:hover
+    {
+      background-color: rgb(0, 22, 150);
+      border-color: rgb(0, 22, 150);
+    }
+    /* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay background with transparency */
+}
+
+.modal-content {
+  background-color: #19191b;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+    </style>
+<script src="https://kit.fontawesome.com/e0d8d9de2f.js" crossorigin="anonymous"></script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+    <div id="cursor"></div>
+          <!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>¿Quieres saber más sobre Kuruma?</h2>
+    <p>¡Síguenos en nuestras redes sociales para estar al tanto de todas las novedades y no perderte ninguna exclusiva acerca del desarrollo de Kuruma y el mundor del motor!</p>
+    <div>
+      <a href="https://www.linkedin.com/in/alejandro-cuartero-molina-b30425229/"target="_blank" ><i class="fab fa-linkedin fa-2x" style="margin-right: 10px; "></i></a>
+      <a href=""target="_blank" >      <i class="fab fa-instagram fa-2x" style="margin-right: 10px;"></i></a>
+      <a href=""target="_blank" >      <i class="fab fa-youtube fa-2x"></i></a>
+    </div>
+  </div>
+</div>
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg navbar-dark position-absolute navbar-sticky">
+        <div class="container px-3">
+          <a href="#" class="navbar-brand pe-3 custom-link">
+            <img src="./img/KurumaLogo.png" width="67" alt="Kuruma">
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom border-light">
+              <h5 class="offcanvas-title text-white">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+                <li class="nav-item custom-link">
+                  <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item custom-link">
+                  <a href="#" class="nav-link" onclick=showModal()>Conoce Kuruma</a>
+                </li>
+                <li class="nav-item custom-link">
+                  <a href="mailto:kuruma.platform@gmail.com" class="nav-link">Contacto</a>
+                </li>
+              </ul>
+            </div>     
+          </div>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        </div>
+      </header>
+
+
+      <!-- Hero -->
+      <section class="dark-mode bg-dark bg-size-cover bg-repeat-0 bg-position-center position-relative overflow-hidden py-5 mb-4" style="background-image: url(assets/img/landing/saas-3/hero/hero-bg.jpg);">
+        <div class="container position-relative zindex-2 pt-5 pb-md-2 pb-lg-4 pb-xl-5">
+          <div class="row pt-3 pb-2 py-md-4">
+
+            <!-- Text -->
+            <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+              <h1 class="display-3 pb-2 pb-sm-3">La plataforma de subastas de vehículos que revolucionará el mercado.</h1>
+              <p class="fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5"> <b> Kuruma: </b>transparencia, seguridad e innovación para comprar y vender vehículos de ocasión</p>
+              <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                <a href=# class="btn btn-lg btn-primary me-3 me-sm-4 custom-link" onclick=showModal()>Conoce Kuruma</a>
+                <a href="mailto:kuruma.platform@gmail.com" class="btn btn-lg btn-outline-secondary custom-link">Contacta con nosotros</a>
+              </div>
+            </div>
+
+             <!-- Parallax gfx -->
+            <div class="col-xl-7 col-md-6 d-md-flex justify-content-end">
+              <div class="parallax mx-auto ms-md-0 me-md-n5" style="max-width: 675px; transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+                <div class="parallax-layer zindex-2" data-depth="0.1" style="transform: translate3d(3.7px, 0.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer01.png" alt="Card">
+                </div>
+                <div class="parallax-layer zindex-2" data-depth="0.16" style="transform: translate3d(3.7px, 0.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer05.png" alt="Card">
+                </div>
+                <div class="parallax-layer zindex-2" data-depth="0.2" style="transform: translate3d(3.7px, 0.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer06.png" alt="Card">
+                </div>
+                <div class="parallax-layer zindex-3" data-depth="0.25" style="transform: translate3d(9.4px, 1.8px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer02.png" alt="Bubble">
+                </div>
+                <div class="parallax-layer" data-depth="-0.15" style="transform: translate3d(-5.6px, -1.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer03.png" alt="Bubble">
+                </div>
+                <div class="parallax-layer" data-depth="-0.25" style="transform: translate3d(-5.6px, -1.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                  <img src="./KurumaLanding_files/layer04.png" alt="Bubble">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+              <img src="./img/KurumaLogo.png" width="100" alt="Kuruma">    
+              Kuruma  
+            </div>
+            <p class="fs-sm pb-lg-3 mb-4">¿Quieres ser de los primeros en conocer Kuruma y seguir su desarrollo?
+
+              Síguenos en redes sociales para estar al día de las novedades de la plataforma.</p>
+          <!--
+            <form class="needs-validation" novalidate="">
+              <label for="subscr-email" class="form-label">Suscríbete a nuestra Newsletter</label>
+              <div class="input-group">
+                <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Tu email" required="">
+                <div class="invalid-tooltip position-absolute top-100 start-0">Por favor introduce una dirección de correo válida</div>
+                <button type="submit" class="btn btn-primary custom-link">Suscribirse</button>
+              </div>
+            </form>
+            -->
+          </div>
+          <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
+            <div id="footer-links" class="row">
+              <div class="col-lg-4">
+                <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link" onclick=showModal()>Conoce Kuruma</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link">Contacto</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-3">
+                <h6 class="mb-2">
+                  <a href="" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Socials</a>
+                </h6>
+                <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                  <ul class="nav flex-column mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="#" target="_blank" class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link">YouTube</a></li>
+                    <li class="nav-item"><a href="https://www.linkedin.com/in/alejandro-cuartero-molina-b30425229/" target="_blank" class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link">LinkedIn</a></li>
+                    <li class="nav-item"><a href="#" target="_blank" class="nav-link d-inline-block px-0 pt-1 pb-2 custom-link">Instagram</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
+                <h6 class="mb-2">Contacta con nosotros</h6>
+                <a href="mailto:kuruma.platform@gmail.com" class="fw-medium custom-link" style="color: #2534ff;">kuruma.platform@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
+          Hecho por 
+          <a class="nav-link d-inline-block p-0" target="_blank" rel="noopener"> Kuruma</a>
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Vendor Scripts -->
+    <script src="./KurumaLanding_files/bootstrap.bundle.min.js.descarga"></script>
+    <script src="./KurumaLanding_files/smooth-scroll.polyfills.min.js.descarga"></script>
+    <script src="./KurumaLanding_files/parallax.min.js.descarga"></script>
+
+
+    <!-- Main Theme Script -->
+    <script src="./KurumaLanding_files/theme.min.js.descarga"></script>
+        
+    <script>
+      // Select the cursor div
+      const cursor = document.getElementById('cursor');
+      // Listen for mousemove events on the document
+      document.addEventListener('mousemove', (e) => {
+      // Update the position of the cursor div based on the mouse coordinates
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      });
+
+      const customLinks = document.querySelectorAll('.custom-link');
+
+      customLinks.forEach(link => {
+          link.addEventListener('mouseover', () => {
+              cursor.style.width = '60px'; // Change the cursor width when hovering over the link
+              cursor.style.height = '60px'; 
+          });
+
+          link.addEventListener('mouseout', () => {
+              cursor.style.width = '20px'; // Reset the cursor width when not hovering over the link
+              cursor.style.height = '20px'; 
+          });
+      });
+
+      // Get the modal, close button, and "Conoce Kuruma" link elements
+      const modal = document.getElementById('myModal');
+const closeBtn = document.getElementsByClassName('close')[0];
+
+// Function to display the modal
+function showModal() {
+  modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close the modal when the close button is clicked
+closeBtn.onclick = closeModal;
+
+// Close the modal when clicking outside the modal content
+window.onclick = function (event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+
+      </script>
+</body>
+</html>
