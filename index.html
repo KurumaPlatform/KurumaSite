@@ -19,6 +19,39 @@
     <link rel="stylesheet" media="screen" href="./KurumaLanding_files/theme.min.css">
 
     <style>
+
+      /* Hide the default controls */
+#myVideo::-webkit-media-controls {
+    display: none !important;
+}
+
+/* Hide the broadcast icon */
+#myVideo::-webkit-media-controls-start-playback-button {
+    display: none !important;
+} 
+
+#myVideo {
+            border-radius: 40px; /* Adjust the radius as needed */
+            opacity: 0.5;
+        }
+        #myVideoContainer {
+            position: relative;
+            margin-top: 5rem;
+        }
+        #myVideo {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px; /* Adjust the radius as needed */
+        }
+        #textOverlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
      
     #cursor {
         width: 20px; /* Set the width of the cursor div */
@@ -179,7 +212,7 @@
             <!-- Text -->
             <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
               <h1 class="display-3 pb-2 pb-sm-3">La plataforma de subastas de vehículos que revolucionará el mercado.</h1>
-              <p class="fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5"> <b> Kuruma: </b>transparencia, seguridad e innovación para comprar y vender vehículos de ocasión</p>
+              <p class="fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5"> <b> Kuruma: </b>transparencia, seguridad e innovación para comprar y vender vehículos de ocasión.</p>
               <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
                 <a href=# class="btn btn-lg btn-primary me-3 me-sm-4 custom-link" onclick=showModal()>Conoce Kuruma</a>
                 <a href="mailto:kuruma.platform@gmail.com" class="btn btn-lg btn-outline-secondary custom-link">Contacta con nosotros</a>
@@ -210,6 +243,16 @@
               </div>
             </div>
           </div>
+          <div id="myVideoContainer">
+            <video id="myVideo" autoplay loop muted >
+                <source src="img/KurumaAnimatedLogo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="textOverlay">
+              <h2 class="display-3 pb-1 pb-sm-3">Sigue el desarrollo de Kuruma y únete al cambio.</h2>
+            </div>
+        </div>
+        
         </div>
       </section>
 
